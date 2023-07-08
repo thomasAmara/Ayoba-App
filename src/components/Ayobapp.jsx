@@ -37,6 +37,7 @@ function App() {
           <Wrap
             mt='10px'
             pt='120px'
+            mb='15px'
             direction={['column', 'column']}
             // justify={['center']}
             align={'center'}
