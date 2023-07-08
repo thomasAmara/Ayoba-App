@@ -40,7 +40,8 @@ function Insight() {
           <Stack spacing={20}>
             <Box
               display='flex'
-              flexDirection='row'
+              p={['10px 20px', '6px 12px']}
+              flexDirection={['column-reverse', 'row', 'row']}
               justifyContent='space-between'
             >
               <Box pt='30px' maxWidth='450px'>
@@ -72,7 +73,8 @@ function Insight() {
             </Box>
             <Box
               display='flex'
-              flexDirection='row-reverse'
+              p={['10px 20px', '6px 12px']}
+              flexDirection={['column-reverse', 'row-reverse', 'row-reverse']}
               justifyContent='space-between'
             >
               <Box pt='30px' maxWidth='450px'>
@@ -104,7 +106,8 @@ function Insight() {
             </Box>
             <Box
               display='flex'
-              flexDirection='row'
+              p={['10px 20px', '6px 12px']}
+              flexDirection={['column-reverse', 'row', 'row']}
               justifyContent='space-between'
             >
               <Box pt='30px' maxWidth='450px'>
@@ -137,7 +140,8 @@ function Insight() {
             </Box>
             <Box
               display='flex'
-              flexDirection='row-reverse'
+              p={['10px 20px', '6px 12px']}
+              flexDirection={['column-reverse', 'row-reverse', 'row-reverse']}
               justifyContent='space-between'
             >
               <Box maxWidth='450px'>
