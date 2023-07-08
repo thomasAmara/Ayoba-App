@@ -5,7 +5,7 @@ import Instagram from '../Images/instagram.svg';
 import Facebook from '../Images/facebook.svg';
 import Twitter from '../Images/twitter.svg';
 import LinkedIn from '../Images/linkedin.svg';
-// import Tiktok from '../Images/tiktok.svg';
+import Tiktok from '../Images/tiktok.svg';
 
 function Footer() {
   return (
@@ -39,6 +39,7 @@ function Footer() {
           <Image src={Instagram} />
           <Image src={Twitter} />
           <Image src={LinkedIn} />
+          <Image src={Tiktok} />
         </Box>
         <Box>
           <Box
@@ -47,7 +48,12 @@ function Footer() {
             mb='10px'
             alignItems='center'
           >
-            <Text fontSize='20px' color='#FFF' fontFamily='Nunito'>
+            <Text
+              fontSize='20px'
+              fontWeight='600'
+              color='#FFF'
+              fontFamily='Nunito'
+            >
               Get Started
             </Text>
           </Box>
