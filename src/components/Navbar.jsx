@@ -34,7 +34,7 @@ function Navbar() {
           borderRadius='5px'
           colorScheme='facebook'
         >
-          Register
+          Apply now
         </Button>
       </Box>
       <div className='Hero'>
