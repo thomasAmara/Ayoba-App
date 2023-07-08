@@ -1,8 +1,10 @@
 import { Text, Box, Button } from '@chakra-ui/react';
 import React from 'react';
 import '../../src/acc.css';
+import { useMediaQuery } from '@chakra-ui/react';
 
 function Accelerator() {
+  const [isLessThan525] = useMediaQuery('(max-width: 525px)');
   return (
     <div
       className='accleratorContainer'
@@ -19,6 +21,8 @@ function Accelerator() {
           width='100%'
           fontFamily='Inter'
           maxWidth='600px'
+          display='flex'
+          flexDirection='column'
           //   pb='40px'
           p={['20px 40px', '20px 35px']}
         >
@@ -59,9 +63,12 @@ function Accelerator() {
             journey towards success.
           </Text>
           <Button
-            mt='90px'
-            width={['270px', '350px', '400px']}
+            mt={isLessThan525 ? '20px' : '90px'}
+            width={['260px', '350px', '400px']}
             height='60px'
+            // margin='0 auto'
+            // margin={isLessThan525 ? '0 auto' : '40px 0px'}
+            // color={isLessThan525 ? 'green' : 'yellow.200'}
             colorScheme='facebook'
           >
             Join the Accelerator Program
