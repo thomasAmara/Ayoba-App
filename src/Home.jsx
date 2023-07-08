@@ -1,4 +1,3 @@
-import { Text, Box } from '@chakra-ui/react';
 import React from 'react';
 import Navbar from './components/Navbar';
 import Accelerator from './components/Accelerator';

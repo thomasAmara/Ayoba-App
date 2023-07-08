@@ -1,4 +1,4 @@
-import { Box, SimpleGrid, Text, Stack, Button, Image } from '@chakra-ui/react';
+import { Box, Text, Stack, Button, Image } from '@chakra-ui/react';
 import Money from '../Images/money.png';
 import Author from '../Images/author.png';
 import Glass from '../Images/glass.png';

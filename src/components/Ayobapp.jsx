@@ -1,13 +1,5 @@
 /* eslint-disable no-undef */
-import {
-  Box,
-  Button,
-  Image,
-  Stack,
-  Text,
-  Wrap,
-  WrapItem,
-} from '@chakra-ui/react';
+import { Box, Button, Image, Text, Wrap, WrapItem } from '@chakra-ui/react';
 import React from 'react';
 import Lady from '../Images/women_chopped_2bf54a3b3c 1.svg';
 import Ayoba from '../Images/ayobaLogo.png';

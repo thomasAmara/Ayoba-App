@@ -5,7 +5,7 @@ import Instagram from '../Images/instagram.svg';
 import Facebook from '../Images/facebook.svg';
 import Twitter from '../Images/twitter.svg';
 import LinkedIn from '../Images/linkedin.svg';
-import Tiktok from '../Images/tiktok.svg';
+// import Tiktok from '../Images/tiktok.svg';
 
 function Footer() {
   return (

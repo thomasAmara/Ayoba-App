@@ -1,15 +1,15 @@
 import React from 'react';
 import {
   Modal,
-  ModalOverlay,
+  // ModalOverlay,
   ModalContent,
   Stack,
-  ModalHeader,
+  // ModalHeader,
   ModalBody,
   Button,
-  Divider,
-  Box,
-  Text,
+  // Divider,
+  // Box,
+  // Text,
   Wrap,
   WrapItem,
 } from '@chakra-ui/react';
