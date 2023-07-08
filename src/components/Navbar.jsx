@@ -33,6 +33,7 @@ function Navbar() {
           width='130px'
           borderRadius='5px'
           colorScheme='facebook'
+          onClick={onOpen}
         >
           Apply now
         </Button>
