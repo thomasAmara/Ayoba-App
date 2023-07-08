@@ -1,0 +1,19 @@
+.accleratorContainer{
+    background-image: url('./Images/Circles.png');
+    background-repeat: no-repeat;
+    background-position: 100% 50%;
+    background-size: contain;
+}
+.Hero{
+    background-image: url('./Images/Hero.png');
+    background-size: cover;
+}
+  .mainContainer{
+    background-image: url('./Images/Rectangle.png');
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: 50% 150%;
+    background-size: contain;
+
+
+  } 
