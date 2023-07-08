@@ -17,3 +17,9 @@
 
 
   } 
+@media (max-width: 520px) {
+    .mainContainer {
+      display: flex;
+    }
+  }
+  
