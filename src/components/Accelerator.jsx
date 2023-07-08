@@ -25,7 +25,7 @@ function Accelerator() {
           alignItems={['center', 'flex-start', 'flex-start']}
           flexDirection='column'
           //   pb='40px'
-          p={['20px 40px', '20px 35px']}
+          p={['20px 30px', '20px 35px']}
         >
           <Text
             fontWeight='400'
@@ -63,17 +63,17 @@ function Accelerator() {
             Join Ayoba's SME Accelerator now and embark on a transformative
             journey towards success.
           </Text>
-          <Button
-            mt={isLessThan525 ? '20px' : '90px'}
-            width={['260px', '350px', '400px']}
-            height='60px'
-            // margin='0 auto'
-            // margin={isLessThan525 ? '0 auto' : '40px 0px'}
-            // color={isLessThan525 ? 'green' : 'yellow.200'}
-            colorScheme='facebook'
-          >
-            Join the Accelerator Program
-          </Button>
+          <Box mt={isLessThan525 ? '20px' : '90px'}>
+            <Button
+              width={['260px', '350px', '400px']}
+              height='60px'
+              margin='0 auto'
+              // margin={isLessThan525 ? '0 auto' : '40px 0px'}
+              colorScheme='facebook'
+            >
+              Join the Accelerator Program
+            </Button>
+          </Box>
         </Box>
       </Box>
     </div>
