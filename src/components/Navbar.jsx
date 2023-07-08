@@ -59,7 +59,7 @@ function Navbar() {
               <Text as='span' fontFamily='Nunito' color='#FDB933'>
                 Ayoba SME Accelerator
               </Text>{' '}
-              program 2023
+              Nigeria 2023
             </Text>
             <Text
               fontWeight='500'
