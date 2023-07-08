@@ -19,8 +19,8 @@ function Accelerator() {
           width='100%'
           fontFamily='Inter'
           maxWidth='600px'
-          pb='40px'
-          p={['20px', '18px']}
+          //   pb='40px'
+          p={['20px 40px', '20px 35px']}
         >
           <Text
             fontWeight='400'
@@ -60,7 +60,7 @@ function Accelerator() {
           </Text>
           <Button
             mt='90px'
-            width={['300px', '350px', '400px']}
+            width={['270px', '350px', '400px']}
             height='60px'
             colorScheme='facebook'
           >
