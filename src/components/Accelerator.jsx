@@ -22,6 +22,7 @@ function Accelerator() {
           fontFamily='Inter'
           maxWidth='600px'
           display='flex'
+          alignItems={['center', 'flex-start', 'flex-start']}
           flexDirection='column'
           //   pb='40px'
           p={['20px 40px', '20px 35px']}
