@@ -11,10 +11,11 @@ const theme = extendTheme({
     Modal: {
       baseStyle: (props) => ({
         dialog: {
-          marginTop: ['20px', '30px', '90px'],
-          maxWidth: ['280px', '300px', '400px', '850px'],
-          minWidth: ['200px', '200px', '350px', '780px '],
-          // bg: '#00ff00',
+          marginTop: ['90px', '70px', '90px'],
+          maxWidth: ['220px', '350px', '600px'],
+          width: ['90%', '100%', '90%'],
+          // minWidth: ['200px', '200px', '350px'],
+          // bg: ['#00ff00', '#F4F453', '#456D23'],
         },
       }),
     },
