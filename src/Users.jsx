@@ -20,9 +20,9 @@ function Users() {
 
   const columns = [
     {
-      title: 'Name',
-      dataIndex: 'name',
-      key: 'name',
+      title: 'First Name',
+      dataIndex: 'firstName',
+      key: 'firstName',
       render: (text, record) => (
         <Text fontSize='16px' color='#000' fontWeight='500'>
           {text}
@@ -30,19 +30,25 @@ function Users() {
       ),
     },
     {
-      title: 'BusinessName',
+      title: 'Last Name',
+      dataIndex: 'lastName',
+      key: 'lastName',
+    },
+    {
+      title: 'Business Name',
       dataIndex: 'businessName',
       key: 'duration',
     },
     {
-      title: 'Name',
-      dataIndex: 'name',
-      key: 'name',
+      title: 'Business Email',
+      dataIndex: 'businessEmail',
+      key: 'businessEmail',
     },
+
     {
-      title: 'PhoneNumber',
-      dataIndex: 'date',
-      key: 'date',
+      title: 'Phone Number',
+      dataIndex: 'phoneNo',
+      key: 'phoneNo',
     },
     {
       title: 'Location',
