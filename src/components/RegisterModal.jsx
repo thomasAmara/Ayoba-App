@@ -19,6 +19,7 @@ import axios from 'axios';
 
 function RegisterModal({ isOpen, onClose }) {
   const [message, setMessage] = useState(null);
+  const [loader, setLoader] = useState(false);
 
   const toast = useToast();
 
@@ -62,13 +63,13 @@ function RegisterModal({ isOpen, onClose }) {
         <ModalBody>
           <Formik
             initialValues={{
-              name: '',
-              // lastName: '',
+              firstName: '',
+              lastName: '',
               gender: '',
               phoneNo: '',
               businessName: '',
-              email: '',
-              age: 5,
+              businessEmail: '',
+              city: '',
               location: '',
             }}
             validationSchema={RegisterSchema}
@@ -105,7 +106,7 @@ function RegisterModal({ isOpen, onClose }) {
                     <Box>
                       <Wrap>
                         <Text>First Name</Text>
-                        <CustomInput name='name' placeholder='Killian' />
+                        <CustomInput name='firstName' placeholder='Killian' />
                       </Wrap>
                     </Box>
                     <Box>
@@ -169,7 +170,7 @@ function RegisterModal({ isOpen, onClose }) {
                         <Wrap>
                           <Text>Business Email</Text>
                           <CustomInput
-                            name='email'
+                            name='businessEmail'
                             placeholder='Ragg@gmail.com'
                           />
                         </Wrap>
@@ -200,12 +201,7 @@ function RegisterModal({ isOpen, onClose }) {
                   <Button
                     borderRadius='8px'
                     colorScheme='facebook'
-                    onClick={
-                      () => getSubmit(values)
-                      // {
-                      //   console.log('values', values);
-                      // }
-                    }
+                    onClick={() => getSubmit(values)}
                   >
                     Submit
                   </Button>
