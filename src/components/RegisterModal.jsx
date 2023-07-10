@@ -18,9 +18,7 @@ import * as Yup from 'yup';
 import axios from 'axios';
 
 function RegisterModal({ isOpen, onClose }) {
-  const [message, setMessage] = useState(null);
   const [loader, setLoader] = useState(false);
-
   const toast = useToast();
 
   const RegisterSchema = Yup.object().shape({
@@ -42,18 +40,16 @@ function RegisterModal({ isOpen, onClose }) {
       });
 
       if (response.status === 201) {
-        setMessage('Registration Successfull');
         toast({
           position: 'top-right',
           title: 'Success',
-          // description: error.message,
+          description: response.data.message,
           status: 'success',
           duration: 9000,
           isClosable: true,
         });
         setLoader(false);
       }
-      console.log('my data', response);
     } catch (error) {
       console.log(error);
       toast({
@@ -87,11 +83,6 @@ function RegisterModal({ isOpen, onClose }) {
           >
             {({ values, setValues, errors }) => (
               <Form>
-                {message && (
-                  <div style={{ fontSize: '20px', color: '#0B6624' }}>
-                    {message}
-                  </div>
-                )}
                 <Box>
                   <Box
                     display='flex'
@@ -209,7 +200,7 @@ function RegisterModal({ isOpen, onClose }) {
                   justifyContent='flex-end'
                 >
                   <Button
-                    loading={loader}
+                    isLoading={loader}
                     borderRadius='8px'
                     colorScheme='facebook'
                     onClick={() => getSubmit(values)}
