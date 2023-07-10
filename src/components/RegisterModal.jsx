@@ -35,6 +35,7 @@ function RegisterModal({ isOpen, onClose }) {
   let Url = 'https://ayoba-sme-accelerator.onrender.com/api/register';
 
   const getSubmit = async (values) => {
+    setLoader(true);
     try {
       const response = await axios.post(Url, values, {
         headers: { 'Content-Type': 'application/json' },
@@ -42,6 +43,15 @@ function RegisterModal({ isOpen, onClose }) {
 
       if (response.status === 201) {
         setMessage('Registration Successfull');
+        toast({
+          position: 'top-right',
+          title: 'Success',
+          // description: error.message,
+          status: 'success',
+          duration: 9000,
+          isClosable: true,
+        });
+        setLoader(false);
       }
       console.log('my data', response);
     } catch (error) {
@@ -49,7 +59,7 @@ function RegisterModal({ isOpen, onClose }) {
       toast({
         position: 'top-right',
         title: 'Error.',
-        description: error,
+        description: error.message,
         status: 'error',
         duration: 9000,
         isClosable: true,
@@ -199,6 +209,7 @@ function RegisterModal({ isOpen, onClose }) {
                   justifyContent='flex-end'
                 >
                   <Button
+                    loading={loader}
                     borderRadius='8px'
                     colorScheme='facebook'
                     onClick={() => getSubmit(values)}
