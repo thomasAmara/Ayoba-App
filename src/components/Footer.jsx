@@ -6,9 +6,15 @@ import Facebook from '../Images/facebook.svg';
 import Twitter from '../Images/twitter.svg';
 import LinkedIn from '../Images/linkedin.svg';
 import Tiktok from '../Images/tiktok.svg';
-
+import { useNavigate } from 'react-router-dom';
 
 function Footer() {
+  const navigate = useNavigate();
+
+  const redirectPage = () => {
+    navigate('/backend');
+  };
+
   return (
     <div
       style={{
@@ -36,11 +42,11 @@ function Footer() {
           width='100%'
           justifyContent='space-evenly'
         >
-          <Image src={Facebook} />
-          <Image src={Instagram} />
-          <Image src={Twitter} />
-          <Image src={LinkedIn} />
-          <Image src={Tiktok} />
+          <Image cursor='pointer' src={Facebook} />
+          <Image cursor='pointer' src={Instagram} />
+          <Image cursor='pointer' src={Twitter} />
+          <Image cursor='pointer' src={LinkedIn} />
+          <Image cursor='pointer' src={Tiktok} />
         </Box>
         <Box>
           <Box
@@ -64,6 +70,7 @@ function Footer() {
             width={['280px', '200px']}
             height='72px'
             color='#0161A2'
+            onClick={() => redirectPage()}
           >
             Register
           </Button>
