@@ -21,9 +21,14 @@ function RegisterModal({ isOpen, onClose }) {
   const [loader, setLoader] = useState(false);
   const toast = useToast();
 
+  const phoneRegExp = /^([0](7|8|9){1})(0|1){1}[0-9]{8}$/;
+
   const RegisterSchema = Yup.object().shape({
     firstName: Yup.string().min(4, 'Too Short!').required('Required'),
     lastName: Yup.string().min(4, 'Too Short!').required('Required'),
+    phoneNo: Yup.string()
+      .matches(phoneRegExp, 'Enter a Valid Nigeria Phone number')
+      .required('Required'),
     businessName: Yup.string().required('Required'),
     businessEmail: Yup.string().email('Invalid email').required('Required'),
     city: Yup.string().required('Required'),
@@ -49,7 +54,18 @@ function RegisterModal({ isOpen, onClose }) {
           isClosable: true,
         });
         setLoader(false);
+      } else {
+        toast({
+          position: 'top-right',
+          title: 'Success',
+          description: response.data.message,
+          status: 'success',
+          duration: 9000,
+          isClosable: true,
+        });
+        setLoader(false);
       }
+      setLoader(false);
     } catch (error) {
       console.log(error);
       toast({
@@ -60,6 +76,7 @@ function RegisterModal({ isOpen, onClose }) {
         duration: 9000,
         isClosable: true,
       });
+      setLoader(false);
     }
   };
 
@@ -203,7 +220,12 @@ function RegisterModal({ isOpen, onClose }) {
                     isLoading={loader}
                     borderRadius='8px'
                     colorScheme='facebook'
+                    isDisabled={
+                      Array.isArray(errors) ||
+                      Object.values(errors).toString() !== ''
+                    }
                     onClick={() => getSubmit(values)}
+                    // isDisabled={Formik.values === null}
                   >
                     Submit
                   </Button>
