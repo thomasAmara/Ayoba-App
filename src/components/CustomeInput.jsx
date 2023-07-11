@@ -97,6 +97,11 @@ const CustomInput = (
               color='black'
             />
           </InputGroup>
+          <ErrorMessage
+            component='div'
+            name={field.name}
+            style={errorMessage}
+          />
         </Box>
       )}
     </>
