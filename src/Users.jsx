@@ -16,7 +16,7 @@ function Users() {
         console.error(error);
       });
   }, []);
-  console.log('my', data);
+  console.log('my', data.length);
 
   const columns = [
     {
@@ -60,11 +60,20 @@ function Users() {
     <div>
       <Box p='25px 35px'>
         <Box>
-          <Box borderRadius='20px' color='#FFF' p='20px' bg='#0161A2'>
+          <Box
+            borderRadius='20px'
+            display='flex'
+            justifyContent='space-between'
+            color='#FFF'
+            p='20px'
+            bg='#0161A2'
+          >
             <Text fontSize='36px' fontFamily='nunito' fontWeight='700'>
               Total Registration
             </Text>
-            {/* <Text>{data.count}</Text> */}
+            <Text fontSize='42px' fontFamily='nunito' fontWeight='800'>
+              {data.length}
+            </Text>
           </Box>
         </Box>
         <Table dataSource={data} columns={columns} />
