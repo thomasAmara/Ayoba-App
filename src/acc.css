@@ -7,7 +7,8 @@
 .Hero{
     /* background-image: url('./Images/Hero.png'); */
     background-image: url('./Images/IMG_4298.jpg'); 
-    background-size: cover;
+    /* background-size: cover; */
+    background-size: contain;
 }
   .mainContainer{
     background-image: url('./Images/Rectangle.png');
@@ -21,6 +22,14 @@
 @media (max-width: 520px) {
     .mainContainer {
       display: flex;
+    }
+  }
+  
+
+  @media (max-width: 520px) {
+    .Hero{
+      background-size: cover;
+      background-position: 63% 50%;
     }
   }
   

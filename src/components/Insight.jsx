@@ -146,7 +146,12 @@ function Insight() {
                 </Text>
               </Box>
               <Box>
-                <Image maxWidth='500px' borderRadius='10px' src={Partners} />
+                <Image
+                  maxWidth='500px'
+                  width='100%'
+                  borderRadius='10px'
+                  src={Partners}
+                />
               </Box>
             </Box>
             <Box
@@ -179,7 +184,12 @@ function Insight() {
                 </Text>
               </Box>
               <Box>
-                <Image maxWidth='500px' borderRadius='10px' src={Money} />
+                <Image
+                  maxWidth='500px'
+                  width='100%'
+                  borderRadius='10px'
+                  src={Money}
+                />
               </Box>
             </Box>
           </Stack>
