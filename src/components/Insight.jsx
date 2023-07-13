@@ -1,9 +1,10 @@
 import { Box, Text, Stack, Button, Image } from '@chakra-ui/react';
-import Money from '../Images/money.png';
-import Author from '../Images/author.png';
-import Glass from '../Images/glass.png';
+import Money from '../Images/IMG_4442.jpg';
+// import Author from '../Images/author.png';
+import Glass from '../Images/IMG_4429.jpg';
 import React from 'react';
-import Tile from '../Images/tile.png';
+import Tile from '../Images/IMG_4290.jpg';
+import Partners from '../Images/IMG_4319.jpg';
 
 function Insight() {
   return (
@@ -68,7 +69,12 @@ function Insight() {
                 </Text>
               </Box>
               <Box>
-                <Image src={Glass} />
+                <Image
+                  borderRadius='10px'
+                  maxWidth='500px'
+                  width='100%'
+                  src={Glass}
+                />
               </Box>
             </Box>
             <Box
@@ -101,7 +107,12 @@ function Insight() {
                 </Text>
               </Box>
               <Box>
-                <Image src={Tile} />
+                <Image
+                  maxWidth='500px'
+                  borderRadius='10px'
+                  width='100%'
+                  src={Tile}
+                />
               </Box>
             </Box>
             <Box
@@ -135,7 +146,7 @@ function Insight() {
                 </Text>
               </Box>
               <Box>
-                <Image src={Author} />
+                <Image maxWidth='500px' borderRadius='10px' src={Partners} />
               </Box>
             </Box>
             <Box
@@ -168,7 +179,7 @@ function Insight() {
                 </Text>
               </Box>
               <Box>
-                <Image src={Money} />
+                <Image maxWidth='500px' borderRadius='10px' src={Money} />
               </Box>
             </Box>
           </Stack>
