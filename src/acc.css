@@ -5,10 +5,8 @@
     background-size: contain;
 }
 .Hero{
-    background-image: url('./Images/Hero.png');
-    /* background-image: url('./Images/IMG_4298.jpg');  */
-    background-size: cover;
-    /* background-size: contain; */
+  background-image:  linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) ,  url('./Images/AyobaHero1.png');
+  background-size: cover;
 }
   .mainContainer{
     background-image: url('./Images/Rectangle.png');
