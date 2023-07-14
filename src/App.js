@@ -1,15 +1,17 @@
 import './App.css';
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Home from './Home';
-import User from './Users';
+const Home = lazy(() => import('./Home'));
+const User = lazy(() => import('./Users'));
 
 function App() {
   return (
-    <Routes>
-      <Route path='/' element={<Home />} />
-      <Route path='/backend' element={<User />} />
-    </Routes>
+    <Suspense fallback={<div>Loading...</div>}>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/backend' element={<User />} />
+      </Routes>{' '}
+    </Suspense>
   );
 }
 
