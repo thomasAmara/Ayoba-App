@@ -48,7 +48,8 @@ function RegisterModal({ isOpen, onClose }) {
         toast({
           position: 'top-right',
           title: 'Success',
-          description: response.data.message,
+          description:
+            'Thank you for registration. A message was sent to your email',
           status: 'success',
           duration: 9000,
           isClosable: true,
