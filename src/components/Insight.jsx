@@ -7,6 +7,8 @@ import Tile from '../Images/IMG_4290.jpg';
 import Partners from '../Images/IMG_4319.jpg';
 
 function Insight() {
+  // const [isLargerThan768] = useMediaQuery('(min-width: 768px)');
+
   return (
     <div
       style={{
@@ -41,8 +43,9 @@ function Insight() {
           <Stack spacing={20}>
             <Box
               display='flex'
-              p={['10px 20px', '6px 12px']}
-              flexDirection={['column-reverse', 'row', 'row']}
+              // bg={isLargerThan768 ? '#44ED32' : '#907E'}
+              p={['10px 20px', '6px 12px', '7px 25px']}
+              flexDirection={['column-reverse', 'column-reverse', 'row', 'row']}
               justifyContent='space-between'
             >
               <Box pt='30px' maxWidth='450px'>
@@ -68,7 +71,7 @@ function Insight() {
                   to scale your business effectively.
                 </Text>
               </Box>
-              <Box>
+              <Box display='flex' alignItems='center'>
                 <Image
                   borderRadius='10px'
                   maxWidth='500px'
@@ -79,8 +82,13 @@ function Insight() {
             </Box>
             <Box
               display='flex'
-              p={['10px 20px', '6px 12px']}
-              flexDirection={['column-reverse', 'row-reverse', 'row-reverse']}
+              p={['10px 20px', '6px 12px', '7px 25px']}
+              flexDirection={[
+                'column-reverse',
+                'column-reverse',
+                'row-reverse',
+                'row-reverse',
+              ]}
               justifyContent='space-between'
             >
               <Box pt='30px' maxWidth='450px'>
@@ -106,7 +114,7 @@ function Insight() {
                   can open up new opportunities.
                 </Text>
               </Box>
-              <Box>
+              <Box display='flex' alignItems='center'>
                 <Image
                   maxWidth='500px'
                   borderRadius='10px'
@@ -117,8 +125,8 @@ function Insight() {
             </Box>
             <Box
               display='flex'
-              p={['10px 20px', '6px 12px']}
-              flexDirection={['column-reverse', 'row', 'row']}
+              p={['10px 20px', '6px 12px', '7px 25px']}
+              flexDirection={['column-reverse', 'column-reverse', 'row']}
               justifyContent='space-between'
             >
               <Box pt='30px' maxWidth='450px'>
@@ -145,7 +153,7 @@ function Insight() {
                   and charting a clear path to success.
                 </Text>
               </Box>
-              <Box>
+              <Box display='flex' alignItems='center'>
                 <Image
                   maxWidth='500px'
                   width='100%'
@@ -156,8 +164,13 @@ function Insight() {
             </Box>
             <Box
               display='flex'
-              p={['10px 20px', '6px 12px']}
-              flexDirection={['column-reverse', 'row-reverse', 'row-reverse']}
+              p={['10px 20px', '6px 12px', '7px 25px']}
+              flexDirection={[
+                'column-reverse',
+                'column-reverse',
+                'row-reverse',
+                'row-reverse',
+              ]}
               justifyContent='space-between'
             >
               <Box maxWidth='450px'>
@@ -183,7 +196,7 @@ function Insight() {
                   next level.
                 </Text>
               </Box>
-              <Box>
+              <Box display='flex' alignItems='center'>
                 <Image
                   maxWidth='500px'
                   width='100%'
