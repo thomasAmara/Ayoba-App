@@ -1,4 +1,4 @@
-import { Box, Button, Text, Image } from '@chakra-ui/react';
+import { Box, Button, Text, Image, useMediaQuery } from '@chakra-ui/react';
 import React from 'react';
 import Logo from '../Images/ayoba_554e739428-2 1.svg';
 import '../acc.css';
@@ -6,6 +6,7 @@ import RegisterModal from './RegisterModal';
 import { useDisclosure } from '@chakra-ui/react';
 
 function Navbar() {
+  const [isLessThan765] = useMediaQuery('(min-width: 765px)');
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <div
@@ -43,7 +44,7 @@ function Navbar() {
           margin='0 auto'
           p={['20px', '10px', '10px 20px']}
           maxWidth='1280px'
-          height='100vh'
+          height={isLessThan765 ? '100vh' : null}
           width='100%'
         >
           <Box
@@ -84,7 +85,7 @@ function Navbar() {
           >
             Apply Now
           </Button>
-          <Box mt='20px'>
+          <Box mt='20px' pb={isLessThan765 ? '0px' : '20px'}>
             <Text
               color='#FFF'
               fontFamily='Inter'
