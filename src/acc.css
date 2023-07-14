@@ -5,10 +5,10 @@
     background-size: contain;
 }
 .Hero{
-    /* background-image: url('./Images/Hero.png'); */
-    background-image: url('./Images/IMG_4298.jpg'); 
-    /* background-size: cover; */
-    background-size: contain;
+    background-image: url('./Images/Hero.png');
+    /* background-image: url('./Images/IMG_4298.jpg');  */
+    background-size: cover;
+    /* background-size: contain; */
 }
   .mainContainer{
     background-image: url('./Images/Rectangle.png');
@@ -32,4 +32,11 @@
       background-position: 63% 50%;
     }
   }
+
+  @media (max-width: 1024px) and  (min-width: 840px)  {
+.Hero{
+
+}
+  }
+  
   
