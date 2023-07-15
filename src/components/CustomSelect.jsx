@@ -58,16 +58,16 @@ const CustomSelect = (
             })}
       </Select>
 
-      {/* <div style={{ position: 'relative' }}>
+      <div style={{ position: 'relative' }}>
         <ErrorMessage name={name} component='div' style={errorMessage} />
-      </div> */}
+      </div>
     </div>
   );
 };
 export default CustomSelect;
 
-// const errorMessage = {
-//   color: "red",
-//   position: "absolute",
-//   fontSize: "11px",
-// };
+const errorMessage = {
+  color: "red",
+  position: "absolute",
+  fontSize: "11px",
+};
