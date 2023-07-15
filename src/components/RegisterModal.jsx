@@ -39,12 +39,9 @@ function RegisterModal({ isOpen, onClose }) {
     location: Yup.string().required('Required'),
   });
 
-  console.log('states', States);
-
   let Url = 'https://ayoba-sme-accelerator.onrender.com/api/register';
 
   const getSubmit = async (values) => {
-    console.log('my values', values);
     setLoader(true);
     try {
       const response = await axios.post(Url, values, {
@@ -76,7 +73,6 @@ function RegisterModal({ isOpen, onClose }) {
       }
       setLoader(false);
     } catch (error) {
-      console.log(error);
       toast({
         position: 'top-right',
         title: 'Error.',
