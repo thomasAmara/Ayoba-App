@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Modal,
   ModalContent,
@@ -11,11 +11,14 @@ import {
   Wrap,
   Divider,
   useToast,
+  Select,
 } from '@chakra-ui/react';
-import { Formik, Form } from 'formik';
+import { Formik, Form, ErrorMessage, useField } from 'formik';
 import CustomInput from './CustomeInput';
 import * as Yup from 'yup';
 import axios from 'axios';
+// import CustomSelect from './CustomSelect';
+import { States } from './StateArray';
 
 function RegisterModal({ isOpen, onClose }) {
   const [loader, setLoader] = useState(false);
@@ -35,9 +38,12 @@ function RegisterModal({ isOpen, onClose }) {
     location: Yup.string().required('Required'),
   });
 
+  console.log('states', States);
+
   let Url = 'https://ayoba-sme-accelerator.onrender.com/api/register';
 
   const getSubmit = async (values) => {
+    console.log('my values', values);
     setLoader(true);
     try {
       const response = await axios.post(Url, values, {
@@ -81,6 +87,12 @@ function RegisterModal({ isOpen, onClose }) {
     }
   };
 
+  const errorMessage = {
+    color: 'red',
+    position: 'absolute',
+    fontSize: '10px',
+  };
+
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <ModalContent>
@@ -99,7 +111,7 @@ function RegisterModal({ isOpen, onClose }) {
             validationSchema={RegisterSchema}
             onSubmit={getSubmit}
           >
-            {({ values, setValues, errors }) => (
+            {({ values, setValues, errors, handleChange }) => (
               <Form>
                 <Box>
                   <Box
@@ -125,13 +137,13 @@ function RegisterModal({ isOpen, onClose }) {
                     <Box>
                       <Wrap>
                         <Text>First Name</Text>
-                        <CustomInput name='firstName' placeholder='Killian' />
+                        <CustomInput name='firstName' />
                       </Wrap>
                     </Box>
                     <Box>
                       <Wrap>
                         <Text>Last Name</Text>
-                        <CustomInput name='lastName' placeholder='Ragg' />
+                        <CustomInput name='lastName' />
                       </Wrap>
                     </Box>
                   </SimpleGrid>
@@ -139,7 +151,24 @@ function RegisterModal({ isOpen, onClose }) {
                     <Box>
                       <Wrap>
                         <Text>Gender</Text>
-                        <CustomInput name='gender' placeholder='Male' />
+                        {/* <CustomSelect options={stateArray || []} /> */}
+                        <Select
+                          h='40px'
+                          width='100%'
+                          bg='#fff'
+                          borderColor='#E3E8EF'
+                          isRequired
+                          name='gender'
+                          placeholder='Gender'
+                          value={values.gender}
+                          onChange={handleChange}
+                        >
+                          <>
+                            <option value='Male'>Male</option>
+                            <option value='Female'>Female</option>
+                          </>
+                        </Select>
+                        {/* <CustomInput name='gender' placeholder='Male' /> */}
                       </Wrap>
                     </Box>
                     <Box>
@@ -147,7 +176,7 @@ function RegisterModal({ isOpen, onClose }) {
                         <Text>Phone Number</Text>
                         <CustomInput
                           name={'phoneNo'}
-                          placeholder='08100000000'
+                          // placeholder='08100000000'
                           maxLength={11}
                         />
                       </Wrap>
@@ -181,7 +210,7 @@ function RegisterModal({ isOpen, onClose }) {
                           <Text>Business Name</Text>
                           <CustomInput
                             name='businessName'
-                            placeholder='Ayoba'
+                            // placeholder='Ayoba'
                           />
                         </Wrap>
                       </Box>
@@ -190,7 +219,7 @@ function RegisterModal({ isOpen, onClose }) {
                           <Text>Business Email</Text>
                           <CustomInput
                             name='businessEmail'
-                            placeholder='Ragg@gmail.com'
+                            // placeholder='Ragg@gmail.com'
                           />
                         </Wrap>
                       </Box>
@@ -199,13 +228,35 @@ function RegisterModal({ isOpen, onClose }) {
                       <Box>
                         <Wrap>
                           <Text>City</Text>
-                          <CustomInput name='city' placeholder='Lagos' />
+                          <CustomInput name='city' />
                         </Wrap>
                       </Box>
                       <Box>
                         <Wrap>
                           <Text>State</Text>
-                          <CustomInput name='location' placeholder='Lagos' />
+                          <Select
+                            h='40px'
+                            width='100%'
+                            bg='#fff'
+                            borderColor='#E3E8EF'
+                            isRequired
+                            name='location'
+                            value={values.state}
+                            onChange={handleChange}
+                          >
+                            <>
+                              {States?.map((data) => (
+                                <option key={data.id} value={data.name}>
+                                  {data.name}
+                                </option>
+                              ))}
+                            </>
+                          </Select>
+                          {/* <ErrorMessage
+                            component='div'
+                            name={values.name}
+                            style={errorMessage}
+                          /> */}
                         </Wrap>
                       </Box>
                     </SimpleGrid>
