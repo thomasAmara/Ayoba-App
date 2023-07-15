@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import { Spinner } from '@chakra-ui/react';
 const Home = lazy(() => import('./Home'));
 const User = lazy(() => import('./Users'));
+const Reg = lazy(() => import('./components/SuccessMessage'));
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/backend' element={<User />} />
+        <Route path='/suc' element={<Reg />} />
       </Routes>{' '}
     </Suspense>
   );
