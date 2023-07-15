@@ -58,7 +58,7 @@ function Users() {
   ];
   return (
     <div>
-      <Box p='25px 35px'>
+      <Box w='100%' minWidth='780px' p='25px 35px'>
         <Box>
           <Box
             borderRadius='20px'
@@ -76,7 +76,11 @@ function Users() {
             </Text>
           </Box>
         </Box>
-        <Table dataSource={data} columns={columns} />
+        <Table
+          loading={data.length === 0}
+          dataSource={data}
+          columns={columns}
+        />
       </Box>
     </div>
   );
