@@ -1,4 +1,4 @@
-import { Box, Text, Image, Divider } from '@chakra-ui/react';
+import { Box, Text, Image, Divider, useMediaQuery } from '@chakra-ui/react';
 import React from 'react';
 import Ayoba from '../Images/ayoba.png';
 import '../acc.css';
@@ -9,8 +9,12 @@ import {
   FaTiktok,
   FaTwitterSquare,
 } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import Mail from '../Images/emailIcon.svg';
 
 export default function SuccessMessage() {
+  const [isLessThan525] = useMediaQuery('(max-width: 525px)');
+
   return (
     <div className='successContainer'>
       <Box p='10px 20px'>
@@ -27,10 +31,15 @@ export default function SuccessMessage() {
             display='flex'
             p='25px 5px'
             textAlign='center'
+            flexDirection='column'
             justifyContent='center'
           >
+            <Box display='flex' mb='15px' justifyContent='center'>
+              <Image src={Mail} alt='mail' />
+            </Box>
+
             <Text
-              fontSize='64px'
+              fontSize={['34px', '64px']}
               color='#0161A2'
               fontFamily='Nunito'
               fontWeight='700'
@@ -45,20 +54,26 @@ export default function SuccessMessage() {
             textAlign='center'
             justifyContent='center'
           >
-            <Text fontSize='28px' fontFamily='Nunito' fontWeight='500'>
+            <Text
+              fontSize={['16px', '32px']}
+              fontFamily='Nunito'
+              fontWeight='500'
+            >
               Your registration is successful. A message has been sent to your
               Email from us.
             </Text>
           </Box>
         </Box>
-        <Box>
-          <Divider
-            orientation='horizontal'
-            colorScheme='facebook'
-            variant='solid'
-            size='xl'
-          />
-        </Box>
+
+        <Divider
+          mt='15%'
+          orientation='horizontal'
+          maxWidth='800px'
+          width='100%'
+          size='xl'
+          border='2px'
+          borderColor='#000'
+        />
 
         <Box
           display='flex'
@@ -66,14 +81,23 @@ export default function SuccessMessage() {
           maxWidth='360px'
           justifyContent='space-between'
           flexDirection='row'
-          pt='30px'
-          pb='25px'
+          p={isLessThan525 ? '20px 25px' : '25px'}
         >
-          <FaFacebookSquare size={48} />
-          <FaInstagram size={48} />
-          <FaTwitterSquare size={48} />
-          <FaLinkedin size={48} />
-          <FaTiktok size={48} />
+          <Link to='https://www.facebook.com/AyobaMessaging/'>
+            <FaFacebookSquare size={42} />
+          </Link>
+          <Link to='https://www.instagram.com/ayoba_messaging/'>
+            <FaInstagram size={42} />
+          </Link>
+          <Link to='https://twitter.com/ayoba_me'>
+            <FaTwitterSquare size={42} />
+          </Link>
+          <Link to='https://www.linkedin.com/company/ayoba-superapp/'>
+            <FaLinkedin size={42} />
+          </Link>
+          <Link to='https://www.tiktok.com/@ayoba_me'>
+            <FaTiktok size={42} />
+          </Link>
         </Box>
       </Box>
     </div>
