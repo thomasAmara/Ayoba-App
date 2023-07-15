@@ -6,7 +6,7 @@ import Facebook from '../Images/facebook.svg';
 import Twitter from '../Images/twitter.svg';
 import LinkedIn from '../Images/linkedin.svg';
 import Tiktok from '../Images/tiktok.svg';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Footer() {
   const navigate = useNavigate();
@@ -42,11 +42,21 @@ function Footer() {
           width='100%'
           justifyContent='space-evenly'
         >
-          <Image cursor='pointer' src={Facebook} />
-          <Image cursor='pointer' src={Instagram} />
-          <Image cursor='pointer' src={Twitter} />
-          <Image cursor='pointer' src={LinkedIn} />
-          <Image cursor='pointer' src={Tiktok} />
+          <Link to='https://www.facebook.com/AyobaMessaging/'>
+            <Image cursor='pointer' src={Facebook} />
+          </Link>
+          <Link to='https://www.instagram.com/ayoba_messaging/'>
+            <Image cursor='pointer' src={Instagram} />
+          </Link>
+          <Link to='https://twitter.com/ayoba_me'>
+            <Image cursor='pointer' src={Twitter} />
+          </Link>
+          <Link to='https://www.linkedin.com/company/ayoba-superapp/'>
+            <Image cursor='pointer' src={LinkedIn} />
+          </Link>
+          <Link to='https://www.tiktok.com/@ayoba_me'>
+            <Image cursor='pointer' src={Tiktok} />
+          </Link>
         </Box>
         <Box>
           <Box
