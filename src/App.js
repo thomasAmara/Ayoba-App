@@ -31,7 +31,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/backend' element={<User />} />
-        <Route path='/suc' element={<Reg />} />
+        <Route path='/successMsg' element={<Reg />} />
       </Routes>{' '}
     </Suspense>
   );
