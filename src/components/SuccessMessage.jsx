@@ -66,7 +66,7 @@ export default function SuccessMessage() {
         </Box>
 
         <Divider
-          mt='15%'
+          mt='10%'
           orientation='horizontal'
           maxWidth='800px'
           width='100%'
