@@ -1,4 +1,11 @@
-import { Box, Button, Text, Image, useMediaQuery } from '@chakra-ui/react';
+import {
+  Box,
+  Button,
+  Text,
+  Image,
+  useMediaQuery,
+  Divider,
+} from '@chakra-ui/react';
 import React from 'react';
 import Logo from '../Images/ayoba_554e739428-2 1.svg';
 import '../acc.css';
@@ -60,16 +67,38 @@ function Navbar() {
             >
               <Text as='span' fontFamily='Nunito' color='#FDB933'>
                 Ayoba SME Accelerator
-              </Text>{' '}
-              Nigeria 2023
+              </Text>
+              <Box display='flex' flexDirection={['column', 'row']}>
+                <Text fontSize={['24px', '40px']} fotWeight='700'>
+                  AUG - SEPT 2023
+                </Text>
+                <Box>
+                  <Divider
+                    orientation='vertical'
+                    borderColor='#FFF'
+                    border='3px'
+                    size='xl'
+                  />
+                </Box>
+
+                <Text
+                  ml={['0px', '6px']}
+                  fontSize={['26px', '40px']}
+                  fotWeight='500'
+                >
+                  Nigeria
+                </Text>
+              </Box>
             </Text>
-            <Text
-              fontWeight='500'
-              fontFamily='Inter'
-              fontSize={['20px', '24px', '28px']}
-            >
-              Take your businesses to the next level with Ayoba
-            </Text>
+            <Box pt={['3px', '8px', '25px']}>
+              <Text
+                fontWeight='500'
+                fontFamily='Inter'
+                fontSize={['20px', '24px', '28px']}
+              >
+                Take your businesses to the next level with Ayoba
+              </Text>
+            </Box>
           </Box>
           <Button
             mt={['10px', '50px']}
