@@ -22,14 +22,16 @@
     width: 100%;
     background-image: url('./Images/successMsg.png');
     background-repeat: no-repeat;
-    background-position: 95% 5%;
-    /* background-size: cover; */
+    background-position: 99% 1.5%;
+    background-size: 100% 80%;
   }
 
   @media (max-width: 520px){
     .successContainer{
-      background-size: 100% 99%;
-      background-position: 90%;
+      /* background-size: 100% 99%; */
+      /* background-position: 90%; */
+      background-position: top;
+      background-size: 100% 40%;
     }
   }
 
