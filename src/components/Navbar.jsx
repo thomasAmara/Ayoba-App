@@ -66,7 +66,7 @@ function Navbar() {
               fontSize={['40px', '50px', '64px']}
             >
               <Text as='span' fontFamily='Nunito' color='#FDB933'>
-                Ayoba SME Accelerator
+                Ayoba <text style={{color: '#FFF'}}> SME </text>Accelerator
               </Text>
               <Box display='flex' flexDirection={['column', 'row']}>
                 <Text fontSize={['24px', '40px']} fotWeight='700'>
