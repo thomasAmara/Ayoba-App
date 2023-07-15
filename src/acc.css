@@ -14,9 +14,26 @@
     background-repeat: no-repeat;
     background-position: 50% 150%;
     background-size: contain;
-
-
   } 
+
+  .successContainer{
+    padding: 20px 30px;
+    height: 99vh;
+    width: 100%;
+    background-image: url('./Images/successMsg.png');
+    background-repeat: no-repeat;
+    background-position: 95% 5%;
+    /* background-size: cover; */
+  }
+
+  @media (max-width: 520px){
+    .successContainer{
+      background-size: 100% 99%;
+      background-position: 90%;
+    }
+  }
+
+
 @media (max-width: 520px) {
     .mainContainer {
       display: flex;
