@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import {
   Modal,
   ModalContent,
@@ -13,16 +13,17 @@ import {
   useToast,
   Select,
 } from '@chakra-ui/react';
-import { Formik, Form, ErrorMessage, useField } from 'formik';
+import { Formik, Form } from 'formik';
 import CustomInput from './CustomeInput';
 import * as Yup from 'yup';
 import axios from 'axios';
-// import CustomSelect from './CustomSelect';
 import { States } from './StateArray';
+import { useNavigate } from 'react-router-dom';
 
 function RegisterModal({ isOpen, onClose }) {
   const [loader, setLoader] = useState(false);
   const toast = useToast();
+  const navigate = useNavigate();
 
   const phoneRegExp = /^([0](7|8|9){1})(0|1){1}[0-9]{8}$/;
 
@@ -51,16 +52,17 @@ function RegisterModal({ isOpen, onClose }) {
       });
 
       if (response.status === 201) {
-        toast({
-          position: 'top-right',
-          title: 'Success',
-          description:
-            'Thank you for registration. A message was sent to your email',
-          status: 'success',
-          duration: 9000,
-          isClosable: true,
-        });
-        setLoader(false);
+        // toast({
+        //   position: 'top-right',
+        //   title: 'Success',
+        //   description:
+        //     'Thank you for registration. A message was sent to your email',
+        //   status: 'success',
+        //   duration: 9000,
+        //   isClosable: true,
+        // });
+        return navigate('/successMsg', { replace: true });
+        // setLoader(false);
       } else {
         toast({
           position: 'top-right',
@@ -78,7 +80,7 @@ function RegisterModal({ isOpen, onClose }) {
       toast({
         position: 'top-right',
         title: 'Error.',
-        description: error.message,
+        description: error.response.data.message,
         status: 'error',
         duration: 9000,
         isClosable: true,
@@ -87,11 +89,11 @@ function RegisterModal({ isOpen, onClose }) {
     }
   };
 
-  const errorMessage = {
-    color: 'red',
-    position: 'absolute',
-    fontSize: '10px',
-  };
+  // const errorMessage = {
+  //   color: 'red',
+  //   position: 'absolute',
+  //   fontSize: '10px',
+  // };
 
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
